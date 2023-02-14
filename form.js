@@ -5,9 +5,15 @@ const email = prompt("Enter your e-mail");
 
 alert("Your account has been created\n Account " + account + "\n E-mail " + email);
 
-const race = prompt("Create you character! Choose your race:\n 1)Human 2)Elf 3)Dwarf");
-const class0 = prompt("Choose your class:\n 1)Warrior 2)Wizzard");
-const gender = prompt("What's your gender? 1)Male 2)Female 3)Other")
+
+
+function option1(message) {
+  return prompt(message);
+}
+
+const race = option1("Create you character! Choose your race:\n 1)Human 2)Elf 3)Dwarf");
+const class0 = option1("Choose your class:\n 1)Warrior 2)Wizard");
+const gender = option1("Choose your gender:\n 1)Male 2)Female 3)Other");
 
 const race1 = "Human"
 const race2 = "Elf"
@@ -88,7 +94,7 @@ else if (race == 3 && class0 == 2) {
   alert('You are a ' + race3 + " " + class2 + ', your stats are\nStrenght ' + dwizstrenght + '\nAgility ' + dwizagility + '\nAura ' + dwizaura)
 }
 else {
-  alert("Not valid")
+  console.log(option1())
 }
 
 alert("You have 20 points to add to your stats! Those are, Strenght - Agility - Aura");
