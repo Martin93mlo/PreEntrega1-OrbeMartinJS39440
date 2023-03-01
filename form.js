@@ -11,9 +11,11 @@ function option1(message) {
   return prompt(message);
 }
 
+const nickName = option1("Whats your Nickname?")
 const race = option1("Create you character! Choose your race:\n 1)Human 2)Elf 3)Dwarf");
 const class0 = option1("Choose your class:\n 1)Warrior 2)Wizard");
 const gender = option1("Choose your gender:\n 1)Male 2)Female 3)Other");
+
 
 const race1 = "Human"
 const race2 = "Elf"
@@ -25,73 +27,102 @@ let strenght = 0
 let agility = 0
 let aura = 0
 
-//WARRIORS
-//HUMAN STRENGHT - AGILITY - AURA
-const hwstrenght = 15
-const hwagility = 12
-const hwaura = 12
-//ELF STRENGHT
-const ewstrenght = 14
-const ewagility = 15
-const ewaura = 13
-//DWARF STRENGHT
-const dwstrenght = 20
-const dwagility = 10
-const dwaura = 10
+//WARRIORS////////////////////////////////////////////////////////////////////////////////////////
 
-//WIZZARDS
-//HUMAN STRENGHT - AGILITY - AURA
-const hwizstrenght = 8
-const hwizagility = 14
-const hwizaura = 17
-//ELF STRENGHT - AGILITY - AURA
-const ewizstrenght = 7
-const ewizagility = 15
-const ewizaura = 20
-//DWARF STRENGHT - AGILITY - AURA
-const dwizstrenght = 10
-const dwizagility = 12
-const dwizaura = 15
+//HUMAN WARRIOR
+const humanWarrior = {
+strenght:  15,
+agility:  12,
+aura:  12,
+
+}
+//ELF WARRIOR
+const elfWarrior = {
+strenght:  14,
+agility:  15,
+aura:  13,
+
+}
+
+//DWARF WARRIOR
+const dwarfWarrior = {
+strenght:  20,
+agility:  10,
+aura:  10,
+}
+
+
+
+//WIZZARDS////////////////////////////////////////////////////////////////////////////////////////////////
+//HUMAN WIZZARD
+const humanWizzard = {
+strenght:  8,
+agility:  14,
+aura:  17,
+}
+
+//ELF WIZZARD
+const elfWizzard = {
+strenght:  7,
+agility:  15,
+aura:  20,
+}
+//DWARF WIZZARD
+
+const dwarfWizzard = {
+  strenght:  10,
+  agility:  12,
+  aura:  15,
+}
+
+const mainCharacter = {
+  name: nickName,
+  gender: gender,
+  strenght: 0,
+  agility: 0,
+  aura: 0,
+
+}
 
 let totalStrenght = 0
 let totalAgility = 0
 let totalAura = 0
 
 if (race == 1 && class0 == 1) {
-  totalStrenght += hwstrenght
-  totalAgility += hwagility
-  totalAura += hwaura
-  alert('You are a ' + race1 + " " + class1 + ', your stats are\nStrenght ' + hwstrenght + '\nAgility ' + hwagility + '\nAura ' + hwaura)
+  totalStrenght += humanWarrior.strenght
+  totalAgility += humanWarrior.agility
+  totalAura += humanWarrior.aura
+  alert('You are a ' + race1 + " " + class1 + ', your stats are\nStrenght ' + humanWarrior.strenght + '\nAgility ' + humanWarrior.agility + '\nAura ' + humanWarrior.aura)
 }
 else if (race == 1 && class0 == 2) {
-  totalStrenght += hwizstrenght;
-  totalAgility += hwizagility;
-  totalAura += hwizaura;
-  alert('You are a ' + race1 + " " + class2 + ', your stats are\nStrenght ' + hwizstrenght + '\nAgility ' + hwizagility + '\nAura ' + hwizaura);
+  totalStrenght += humanWizzard.strenght
+  totalAgility += humanWizzard.agility
+  totalAura += humanWizzard.aura
+  alert('You are a ' + race1 + " " + class2 + ', your stats are\nStrenght ' + humanWizzard.strenght + '\nAgility ' + humanWizzard.agility + '\nAura ' + humanWizzard.aura);
 }
 else if (race == 2 && class0 == 1) {
-  totalStrenght += ewstrenght
-  totalAgility += ewagility
-  totalAura += ewaura
-  alert('You are a ' + race2 + " " + class1 + ', your stats are\nStrenght ' + ewstrenght + '\nAgility ' + ewagility + '\nAura ' + ewaura)
+  totalStrenght += elfWarrior.strenght
+  totalAgility += elfWarrior.agility
+  totalAura += elfWarrior.aura
+  alert('You are a ' + race2 + " " + class1 + ', your stats are\nStrenght ' + elfWarrior.strenght + '\nAgility ' + elfWarrior.agility + '\nAura ' + elfWarrior.aura)
 }
 else if (race == 2 && class0 == 2) {
-  totalStrenght += ewizstrenght
-  totalAgility += ewizagility
-  totalAura += ewizaura
-  alert('You are a ' + race2 + " " + class2 + ', your stats are\nStrenght ' + ewizstrenght + '\nAgility ' + ewizagility + '\nAura ' + ewizaura)
+  totalStrenght += elfWizzard.strenght
+  totalAgility += elfWizzard.agility
+  totalAura += elfWizzard.aura
+  alert('You are a ' + race2 + " " + class2 + ', your stats are\nStrenght ' + elfWizzard.strenght + '\nAgility ' + elfWizzard.agility + '\nAura ' + elfWizzard.aura)
 }
 else if (race == 3 && class0 == 1) {
-  totalStrenght += dwstrenght
-  totalAgility += dwagility
-  totalAura += dwaura
-  alert('You are a ' + race3 + " " + class1 + ', your stats are\nStrenght ' + dwstrenght + '\nAgility ' + dwagility + '\nAura ' + dwaura)
+  totalStrenght += dwarfWarrior.strenght
+  totalAgility += dwarfWarrior.agility
+  totalAura += dwarfWarrior.aura
+  alert('You are a ' + race3 + " " + class1 + ', your stats are\nStrenght ' + dwarfWarrior.strenght + '\nAgility ' + dwarfWarrior.agility + '\nAura ' + dwarfWarrior.aura)
 }
 else if (race == 3 && class0 == 2) {
-  totalStrenght += dwizstrenght
-  totalAgility += dwizagility
-  totalAura += dwizaura
-  alert('You are a ' + race3 + " " + class2 + ', your stats are\nStrenght ' + dwizstrenght + '\nAgility ' + dwizagility + '\nAura ' + dwizaura)
+  totalStrenght += dwarfWizzard.strenght
+  totalAgility += dwarfWizzard.agility
+  totalAura += dwarfWizzard.aura
+  alert('You are a ' + race3 + " " + class2 + ', your stats are\nStrenght ' + dwarfWizzard.strenght + '\nAgility ' + dwarfWizzard.agility + '\nAura ' + dwarfWizzard.aura)
 }
 else {
   console.log(option1())
@@ -115,11 +146,17 @@ do {
   }
 } while (TotalPoints != MaxPoints) 
 
-totalStrenght += strenght
-totalAgility += agility
-totalAura += aura
+mainCharacter.strenght += strenght
+mainCharacter.agility += agility
+mainCharacter.aura += aura
 
 alert('Your character has\nStrenght: ' + totalStrenght + "\nAgility: " + totalAgility + "\nAura: " + totalAura + "\nYou are ready to start your journey!")
+
+
+//FORM
+
+
+
 
 /* for (let i = 0; TotalPoints < MaxPoints; i++) {
   TotalPoints = addPointsToCharacter(MaxPoints, TotalPoints, messages[i])
