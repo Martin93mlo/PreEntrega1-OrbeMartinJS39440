@@ -24,21 +24,21 @@
         </fieldset>
     </form>
 
-    <form>
+    <form id="characterForm">
         <fieldset>
-            <legend><strong>Subscribe Form</strong></legend>
-            <img src="./imagenes/humanWarriorMale.png" alt="board">
+            <legend><strong>New Character</strong></legend>
+            <img src="./imagenes/humanWarriorMale.png" alt="board" id="characterImage">
             <fieldset>
                 <label for="nickname">
                     <legend><strong>Nickname</strong></legend>
-                <input type="text" name="nickname" required></label>
+                <input type="text" name="nickname" id="characterNickName" required></label>
                 </label>
                 </fieldset>
                 <br>
                 <fieldset>
                 <label for="race"></label>
-                    <legend><strong>Choose your race</strong></legend>
-                    <select name="race">
+                    <legend><strong>Choose your Race</strong></legend>
+                    <select name="race" id="characterRace">
                         <option value="Human">Human</option>
                         <option value="Elf">Elf</option>
                         <option value="Dwarf">Dwarf</option>
@@ -48,7 +48,7 @@
                 <fieldset>
                 <label for="gender"></label>
                     <legend><strong>Choose your Gender</strong></legend>
-                    <select name="gender">
+                    <select name="gender" id="characterGender">
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
                         <option value="Other">Other</option>
@@ -57,8 +57,8 @@
                 <br>
                 <fieldset>
                 <label for="class"></label>
-                    <legend><strong>Choose your class</strong></legend>
-                    <select name="class">
+                    <legend><strong>Choose your Class</strong></legend>
+                    <select name="class" id="characterClass">
                         <option value="Warrior">Warrior</option>
                         <option value="Wizzard">Wizzard</option>
                     </select>
@@ -66,7 +66,7 @@
                 <br>
                 <fieldset>
                     <input type="reset" value="Clear">
-                    <input type="submit" value="Create">
+                    <input type="submit" id="characterCreate" value="Create">
                 </fieldset>
 
             

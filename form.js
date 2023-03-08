@@ -5,9 +5,24 @@ const email = prompt("Enter your e-mail");
 
 alert("Your account has been created\n Account " + account + "\n E-mail " + email);
 
+const characterPet = [
+  {nombre: 'cougar',
+  nombre: 'wolf',
+  nombre: 'bird',
+  nombre: 'rat',
+  nombre: 'frog',
+  nombre: 'horse',
+  nombre: 'dog'}
+]
 
+const ChoosePet = prompt("choose a pet for your journey!\n0) cougar 1) wolf 2) bird 3) rat 4) frog 5) horse 6) dog")
 
-function option1(message) {
+const petResult = characterPet.find((el) => el.nombre === "cougar")
+const resultado = characterPet.find((el) => el.nombre === "rat")
+
+console.log(petResult)
+
+/* function option1(message) {
   return prompt(message);
 }
 
@@ -15,80 +30,111 @@ const nickName = option1("Whats your Nickname?")
 const race = option1("Create you character! Choose your race:\n 1)Human 2)Elf 3)Dwarf");
 const class0 = option1("Choose your class:\n 1)Warrior 2)Wizard");
 const gender = option1("Choose your gender:\n 1)Male 2)Female 3)Other");
+*/
+
+const characterRace = [
+  "human", "elf", "dwarf",
+];
+
+const characterClass = [
+  "warrior", "wizzard",
+];
+
+const characterGender =[
+  "male", "female", "other",
+];
 
 
-const race1 = "Human"
-const race2 = "Elf"
-const race3 = "Dwarf"
-const class1 = "Warrior"
-const class2 = "Wizzard"
-
-let strenght = 0
-let agility = 0
-let aura = 0
-
-//WARRIORS////////////////////////////////////////////////////////////////////////////////////////
-
-//HUMAN WARRIOR
-const humanWarrior = {
-strenght:  15,
-agility:  12,
-aura:  12,
-
-}
-//ELF WARRIOR
-const elfWarrior = {
-strenght:  14,
-agility:  15,
-aura:  13,
-
+const strenghtDefault = {
+  humanWarrior: 15,
+  humanWizzard: 8,
+  elfWarrior: 14,
+  elfWizzard: 7,
+  dwarfWarrior: 20,
+  dwarfWizzard: 10,
 }
 
-//DWARF WARRIOR
-const dwarfWarrior = {
-strenght:  20,
-agility:  10,
-aura:  10,
+const agilityDefault = {
+  humanWarrior: 12,
+  humanWizzard: 14,
+  elfWarrior: 15,
+  elfWizzard: 15,
+  dwarfWarrior: 10,
+  dwarfWizzard: 12,
+}
+
+const auraDefault = {
+  humanWarrior: 12,
+  humanWizzard: 17,
+  elfWarrior: 13,
+  elfWizzard: 20,
+  dwarfWarrior: 10,
+  dwarfWizzard: 15,
 }
 
 
+const name = document.getElementById("characterNickName").value
+const race = document.getElementById("characterRace").value
+const class1 = document.getElementById("characterClass").value
+const gender = document.getElementById("characterGender").value
 
-//WIZZARDS////////////////////////////////////////////////////////////////////////////////////////////////
-//HUMAN WIZZARD
-const humanWizzard = {
-strenght:  8,
-agility:  14,
-aura:  17,
+
+
+let characterForm =
+document.getElementById("characterForm");
+characterForm.addEventListener("submit", createNewCharacter);
+
+function createNewCharacter(e) {
+  e.preventDefault ();
+  let mainCharacter = new character( document.getElementById("characterNickName").value, document.getElementById("characterRace").value, document.getElementById("characterClass").value, document.getElementById("characterGender").value)
+  console.log("You'r Character has been created!")
 }
 
-//ELF WIZZARD
-const elfWizzard = {
-strenght:  7,
-agility:  15,
-aura:  20,
-}
-//DWARF WIZZARD
-
-const dwarfWizzard = {
-  strenght:  10,
-  agility:  12,
-  aura:  15,
-}
-
-const mainCharacter = {
-  name: nickName,
-  gender: gender,
-  strenght: 0,
-  agility: 0,
-  aura: 0,
-
+class character {
+  constructor(name, race, class1, gender, strenght, agility, aura, image) {
+    this.name = name;
+    this.race = race;
+    this.class1 = class1;
+    this.gender = gender;
+    this.strenght = strenghtDefault[race + class1];
+    this.agility = agilityDefault[race + class1];
+    this.aura = auraDefault[race + class1];
+    this.image = race + class1 + gender + ".png";
+  }
 }
 
-let totalStrenght = 0
-let totalAgility = 0
-let totalAura = 0
 
-if (race == 1 && class0 == 1) {
+alert("You have 20 points to add to your stats! Those are, Strenght - Agility - Aura");
+
+const MaxPoints = 20;
+let TotalPoints = 0;
+
+do {
+  strenght = Number(prompt( "How many points would you like to add to strenght?" ))
+  TotalPoints += strenght
+  agility = Number(prompt( "How many points would you like to add to agility?" ))
+  TotalPoints += agility
+  aura = Number(prompt( "How many points would you like to add to aura?" ))
+  TotalPoints += aura
+  if (TotalPoints != MaxPoints) {
+    TotalPoints = 0;
+      alert( "Re Enter the stats to sum 20!" );
+  }
+} while (TotalPoints != MaxPoints) 
+
+mainCharacter.strenght += strenght
+mainCharacter.agility += agility
+mainCharacter.aura += aura
+
+function readyJourney() {
+  alert('Your character has\nStrenght: ' + totalStrenght + "\nAgility: " + totalAgility + "\nAura: " + totalAura + "\nYou are ready to start your journey!");
+}
+
+let readyJourney1 = document.getElementById("characterCreate");
+
+readyJourney1.addEventListener(click, readyJourney );
+
+/* if (race == 1 && class0 == 1) {
   totalStrenght += humanWarrior.strenght
   totalAgility += humanWarrior.agility
   totalAura += humanWarrior.aura
@@ -126,49 +172,8 @@ else if (race == 3 && class0 == 2) {
 }
 else {
   console.log(option1())
-}
+} */
 
-alert("You have 20 points to add to your stats! Those are, Strenght - Agility - Aura");
-
-const MaxPoints = 20;
-let TotalPoints = 0;
-
-do {
-  strenght = Number(prompt( "How many points would you like to add to strenght?" ))
-  TotalPoints += strenght
-  agility = Number(prompt( "How many points would you like to add to agility?" ))
-  TotalPoints += agility
-  aura = Number(prompt( "How many points would you like to add to aura?" ))
-  TotalPoints += aura
-  if (TotalPoints != MaxPoints) {
-    TotalPoints = 0;
-      alert( "Re Enter the stats to sum 20!" );
-  }
-} while (TotalPoints != MaxPoints) 
-
-mainCharacter.strenght += strenght
-mainCharacter.agility += agility
-mainCharacter.aura += aura
-
-alert('Your character has\nStrenght: ' + totalStrenght + "\nAgility: " + totalAgility + "\nAura: " + totalAura + "\nYou are ready to start your journey!")
 
 
 //FORM
-
-
-
-
-/* for (let i = 0; TotalPoints < MaxPoints; i++) {
-  TotalPoints = addPointsToCharacter(MaxPoints, TotalPoints, messages[i])
-}
-
-function addPointsToCharacter(MaxPoints, points, message) {
-  if (points < MaxPoints) {
-    let AddMainPoints = Number(prompt(message));
-    return points += AddMainPoints
-  }
-}
-
-if (TotalMainPoints == 20) {
-  console.log();
-}  */
