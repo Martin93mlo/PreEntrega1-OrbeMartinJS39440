@@ -15,6 +15,14 @@
 
 }
 
+.container a {
+    text-decoration: none;
+}
+
+.container a:visited {
+    text-decoration: none;
+}
+
 .form-box{
     width: 90%;
     max-width: 400px;
@@ -84,9 +92,26 @@ font p a {
 }
 
 .enterBtn {
-    width: 100%;
+    width: 80%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    margin-left: 25px;
+}
+
+.enterBtn button {
+    flex-basis: 48%;
+    background: #f07c8e;
+    height: 30px;
+    border-radius: 20px;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    transition: background 1s;
+    margin: 5px;
+}
+
+.enterBtn button a {
+    color: black;
 }
 
 .btn-field {

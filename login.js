@@ -8,6 +8,7 @@ let loginBtn = document.getElementById("loginBtn");
 signinBtn.onclick = function(){
     nameField.style.maxHeight = "0";
     title.innerHTML = "Sign In";
+    createBtn.innerHTML = "Enter";
     signupBtn.classList.add("disable");
     signinBtn.classList.remove("disable");
 
@@ -16,6 +17,7 @@ signinBtn.onclick = function(){
 signupBtn.onclick = function(){
     nameField.style.maxHeight = "60px";
     title.innerHTML = "Sign Up";
+    createBtn.innerHTML = "Create";
     signupBtn.classList.remove("disable");
     signinBtn.classList.add("disable");
 
@@ -40,13 +42,13 @@ function user_register(){
     
 }
 
-function search_user (user1){
+function search_user (user){
 
     let user_name = document.getElementById("name").value;
     let user_email = document.getElementById("mail").value;
     let user_password = document.getElementById("password").value;
     
-    return user_name == user1.nombre && user_email == user1.mail && user_password == user1.password
+    return user_name == user.nombre && user_email == user.mail && user_password == user.password
 }
 
 function user_login(){

@@ -4,82 +4,46 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Log in</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Marcellus+SC&family=Monoton&family=Oldenburg&family=Permanent+Marker&family=Sarabun:wght@200&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/4de8ac66e1.js" crossorigin="anonymous"></script>
 </head>
-<header>
-    <nav>
-        <div>
-            <a href="index.html">HOME</a>
-            <a href="minigame.html">PLAY THE MINI GAME!</a>
-        </div>
-    </nav>
-</header>
 <body>
-    <h1>THE DRAGON SLAYER!</h1>
+    <div class="container">
+        <div class="form-box">
+            <h1 id="title">Sign Up</h1>
+            <form>
+                <div class="input-group">
 
-    <form action="">
-        <fieldset>
-            <strong>CHARACTER LV. 1</strong>
-            
-        </fieldset>
-    </form>
+                    <div class="input-field" id="nameField">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="text" placeholder="Name" id="name" required>
+                    </div>
 
-    <form id="characterForm">
-        <fieldset>
-            <legend><strong>New Character</strong></legend>
-            <img src="./imagenes/humanWarriorMale.png" alt="board" id="characterImage">
-            <fieldset>
-                <label for="nickname">
-                    <legend><strong>Nickname</strong></legend>
-                <input type="text" name="nickname" id="characterNickName" required></label>
-                </label>
-                </fieldset>
-                <br>
-                <fieldset>
-                <label for="race"></label>
-                    <legend><strong>Choose your Race</strong></legend>
-                    <select name="race" id="characterRace">
-                        <option value="Human">Human</option>
-                        <option value="Elf">Elf</option>
-                        <option value="Dwarf">Dwarf</option>
-                        </select>
-                    </fieldset>
-                    <br>
-                <fieldset>
-                <label for="gender"></label>
-                    <legend><strong>Choose your Gender</strong></legend>
-                    <select name="gender" id="characterGender">
-                        <option value="Male">Male</option>
-                        <option value="Female">Female</option>
-                        <option value="Other">Other</option>
-                    </select>
-                    </fieldset>
-                <br>
-                <fieldset>
-                <label for="class"></label>
-                    <legend><strong>Choose your Class</strong></legend>
-                    <select name="class" id="characterClass">
-                        <option value="Warrior">Warrior</option>
-                        <option value="Wizzard">Wizzard</option>
-                    </select>
-                </fieldset>
-                <br>
-                <fieldset>
-                    <input type="reset" value="Clear">
-                    <input type="submit" id="characterCreate" value="Create">
-                </fieldset>
+                    <div class="input-field" id="emailField">
+                        <i class="fa-solid fa-envelope"></i>
+                        <input type="email" placeholder="Email" id="mail" required>
+                    </div>
 
-            
-            </fieldset>
-    
-    <!-- <form action="">
-        <img src="knight-fighting-dragon-cartoon-vector-clip-art-illustration-simple-gradients-each-separate-layer-74312826.jpg" alt="knight vs dragon" width="500px">
-        <input type="submit" value="PLAY">
-    </form> -->
-
-    <script src="form.js"></script>
+                    <div class="input-field" id="passwordField">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" placeholder="Password" id="password" required>
+                    </div>
+                    <p>I forgot my password 😅 <a href="#">Click Here!</a></p>
+                </div>
+                <div class="enterBtn">
+                    <button type="button" id="createBtn"><a href="characters.html">Create</a></button>
+                </div>
+                <div class="btn-field">
+                    <button type="button" id="signupBtn">Sign Up</button>
+                    <button type="button" id="signinBtn"  class="disable">Sign In</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="login.js"></script>
 </body>
-<footer>
-    <!-- https://www.dofuskin.com/classes-dofus/sacrieur -->
-</footer>
 </html>
