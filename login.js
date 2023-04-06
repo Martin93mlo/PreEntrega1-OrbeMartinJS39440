@@ -9,6 +9,8 @@ signinBtn.onclick = function(){
     nameField.style.maxHeight = "0";
     title.innerHTML = "Sign In";
     createBtn.innerHTML = "Enter";
+    createBtn.removeEventListener("click", user_register);
+    createBtn.addEventListener("click", user_login);
     signupBtn.classList.add("disable");
     signinBtn.classList.remove("disable");
 
@@ -18,6 +20,8 @@ signupBtn.onclick = function(){
     nameField.style.maxHeight = "60px";
     title.innerHTML = "Sign Up";
     createBtn.innerHTML = "Create";
+    createBtn.removeEventListener("click", user_login);
+    createBtn.addEventListener("click", user_register);
     signupBtn.classList.remove("disable");
     signinBtn.classList.add("disable");
 
@@ -29,6 +33,9 @@ function user_register(){
     let user_name = document.getElementById("name")
     let user_email = document.getElementById("mail")
     let user_password = document.getElementById("password")
+
+    arr_users = localStorage.getItem("arr_users")
+    arr_users = JSON.parse(arr_users);
 
     //OBJETO DE USUARIOS//
     let user = {name:user_name.value,
@@ -46,11 +53,11 @@ function user_register(){
 
 function search_user (user){
 
-    let user_name = document.getElementById("name").value;
+    //let user_name = document.getElementById("name").value;
     let user_email = document.getElementById("mail").value;
     let user_password = document.getElementById("password").value;
     
-    return user_name == user.nombre && user_email == user.mail && user_password == user.password
+    return /* user_name == user.nombre &&  */user_email == user.email && user_password == user.password
 }
 
 function user_login(){
@@ -62,10 +69,17 @@ function user_login(){
         arr_registered = JSON.parse(arr_registered);
 
         console.log(arr_registered);
-        let search_result = arr_registered.find(search_user)
+        let search_result = null;
+        for (let i = 0; i < arr_registered.length; i++) {
+            console.log("aserfs", search_user(arr_registered[i]))
+            console.log("user", arr_registered[i])
+            if (search_user(arr_registered[i])) search_result = arr_registered[i];
+            if (search_result) break;
+        }
 
         if( search_result != null){
             console.log("Se encontro: ", search_result)
+            window.location.href = "characters.html"
         }
         else{
             console.log("No se encontro el usuario");
@@ -76,4 +90,4 @@ function user_login(){
 
 
 createBtn.addEventListener("click", user_register);
-loginBtn.addEventListener("click", user_login);
+//loginBtn.addEventListener("click", user_login);
