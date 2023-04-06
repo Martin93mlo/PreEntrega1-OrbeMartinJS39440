@@ -4,6 +4,7 @@ let nameField = document.getElementById("nameField");
 let title = document.getElementById("title");
 let createBtn = document.getElementById("createBtn");
 let loginBtn = document.getElementById("loginBtn");
+let sendBtn = document.getElementById("sendBtn");
 
 signinBtn.onclick = function(){
     nameField.style.maxHeight = "0";
@@ -27,9 +28,28 @@ signupBtn.onclick = function(){
 
 }
 
+//sign up----------------------------------------------------------------
+
 let arr_users = [];
 
-function user_register(){
+const userRegistration = (ev)=>{
+    ev.preventDefault();
+    let user = {
+        name: document.getElementById("name").value,
+        mail: document.getElementById("mail").value,
+        password: document.getElementById("password"),
+    }
+    arr_users.push(user);
+    document.querySelector('form').reset();
+
+    localStorage.setItem('arrayUsers', JSON.stringify(arr_users) );
+}
+
+document.addEventListener('DOMContentLoaded', ()=>{
+    document.getElementById("createBtn").addEventListener('click', userRegistration)
+})
+
+/* function user_register(){
     let user_name = document.getElementById("name")
     let user_email = document.getElementById("mail")
     let user_password = document.getElementById("password")
@@ -37,7 +57,7 @@ function user_register(){
     arr_users = localStorage.getItem("arr_users")
     arr_users = JSON.parse(arr_users);
 
-    //OBJETO DE USUARIOS//
+    
     let user = {name:user_name.value,
         email:user_email.value,
         password:user_password.value,
@@ -49,7 +69,9 @@ function user_register(){
 
     localStorage.setItem("arr_users", arr_user_json)
     
-}
+} */
+
+//sig in-------------------------------------------------------
 
 function search_user (user){
 
@@ -59,6 +81,7 @@ function search_user (user){
     
     return /* user_name == user.nombre &&  */user_email == user.email && user_password == user.password
 }
+
 
 function user_login(){
     

@@ -9,7 +9,7 @@ let charForm = document.getElementById("charForm");
 let newCharBtn = document.getElementById("newCharBtn");
 let selCharBtn = document.getElementById("selCharBtn");
 let back = document.getElementById("back");
-let send = document.getElementById("sendBtn");
+let sendBtn = document.getElementById("sendBtn");
 
 
 //CLICK EVENTS WHEN CREATING CHARACTERS
@@ -37,6 +37,19 @@ document.addEventListener('DOMContentLoaded', ()=>{
     document.getElementById("sendBtn").addEventListener('click', createChar,);
 });
 
-sendBtn.click(function(){
-    Swal.fire('Character created!')
+function createAlert(){
+    Swal.fire({
+        title: 'Your character has been created!',
+        text: 'You choosed a ' + document.getElementById("charRace").value + document.getElementById("charClass").value,
+    })
+}
+document.getElementById('sendBtn').addEventListener('click', createAlert);
+
+swal.fire({
+    title: 'Welcome!',
+    text: 'The game is still in progress, but you can create a character for the adventure!',
 })
+
+function created (){
+    
+}
