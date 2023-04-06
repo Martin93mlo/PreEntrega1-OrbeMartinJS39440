@@ -31,7 +31,9 @@ function user_register(){
     let user_password = document.getElementById("password")
 
     //OBJETO DE USUARIOS//
-    let user = {name:user_name.value , email:user_email.value , password:user_password.value
+    let user = {name:user_name.value,
+        email:user_email.value,
+        password:user_password.value,
     };
 
     arr_users.push(user);

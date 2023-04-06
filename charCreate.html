@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Marcellus+SC&family=Monoton&family=Oldenburg&family=Permanent+Marker&family=Sarabun:wght@200&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <title>Characters Selection</title>
+</head>
+<body>
+    <div class="fullBack">
+        <h1 id="topTitle">Select your Character</h1>
+        <div class="square">
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+
+        <div class="circle">
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+ <div id="selection">
+    <button type="button" id="newCharBtn">New Character</button>
+    <button type="button" id="selCharBtn">My Characters</button>
+ </div>
+
+
+ <form id="charForm"> 
+    <div class="content">
+
+        <h3 class="logo">New <span>Character</span></h3>
+
+        <div class="contact-wrapper animated bounceInUp">
+            <div class="charSheet-form">
+                <h3>Character Sheet</h3>
+                <form>
+                    <p>
+                        <label>Nick Name</label>
+                        <input type="text" name="nickname" id="charName" style="color:white">
+                    </p>
+                    <p>
+                        <label>Gender</label>
+                        <select name="gender" id="charGender">
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </p>
+                    <p>
+                        <label>Race</label>
+                        <select name="race" id="charRace">
+                            <option value="Human">Human</option>
+                            <option value="Elf">Elf</option>
+                            <option value="Dwarf">Dwarf</option>
+                            </select>
+                    </p>
+                    <p>
+                        <label>Class</label>
+                        <select name="class" id="charClass">
+                            <option value="Warrior">Warrior</option>
+                            <option value="Wizzard">Wizzard</option>
+                        </select>
+                    </p>
+                    <p>
+                        <button id="sendBtn">
+                            Send
+                        </button>
+                    </p>
+                </form>
+            </div>
+            
+        </div>
+
+    </div>
+ </form>
+
+ <script src="charCreate.js"></script>
+</body>
+</html>

@@ -3,7 +3,14 @@
     padding: 0;
     font-family: 'Oldenburg', cursive;
     box-sizing: border-box;
+    
 }
+
+#charForm {
+    display: none;
+}
+
+/*--------------LOGIN PAGE-------------------*/
  
 .container{
     width: 100%;
@@ -142,15 +149,17 @@ font p a {
 }
 
 /*---------------CHARACTERS SECTION--------------------*/
+
+
 .fullBack {
-    background-image: linear-gradient(#5534cc,#c44d4d);
+    background-image: linear-gradient(#2f1e70,#2b2121);
     position: relative;
     height: 100vh;
     overflow: hidden;
     font-family: 'Oldenburg', cursive;
 }
 
-/*-----------------------BACKGROUND----------------------*/
+/*-----------------------BACKGROUND ANIMATION----------------------*/
 
 .fullBack h1 {
     color: #fff;
@@ -253,6 +262,90 @@ ul li {
         
     }
 }
+/*----------------NEW CHARACTER FORM-------------------*/
+
+.content {
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1.5em;
+    color: white;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+.logo {
+    text-align: center;
+    font-size: 3em;
+}
+
+.logo span {
+    color: #B70E21;
+}
+
+.contact-wrapper {
+    box-shadow: 0 0 20px 0 rgba(255, 255, 255, .3);
+}
+
+.contact-wrapper > * {
+    padding: 1em;
+}
+
+.charSheet-form {
+    background: #222222;
+}
+
+.charSheet-form form {
+    display: inline-block
+}
+
+.charSheet-form form label {
+    display: block;
+}
+
+.charSheet-form form p {
+    margin: 0;
+    padding: 1em;
+}
+
+.charSheet-form form .block {
+    grid-column: 1 / 3;
+}
+
+.charSheet-form form textarea {
+    width: 100%;
+    padding: .7em;
+    border: none;
+    background: none;
+    outline: 0;
+    color: #fff;
+    border-bottom: 1px solid #4e0795;
+}
+
+.charSheet-form form button {
+    background: #4e0795;
+    border: 0;
+    text-transform: uppercase;
+    padding: 1em;
+}
+
+.charSheet-form form button:hover,
+.charSheet-form form button:focus {
+    background: #643c8b;
+    color: #fff;
+    transition: background-color 1s ease-out;
+    outline: 0;
+}
+/*--------------------CHARACTER SELECTION------------------------*/
+
+
+/*----------------------BUTTONS------------------------------*/
+
+
+  /*------------------------------------------------------------*/
 
 .character-small-img img {
     height: 92px;
@@ -270,7 +363,23 @@ ul li {
     float: left;
 }
 
-.characters-preselect {
+.characters-preselect-male {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    position: absolute;
+    margin: 30px;
+}
+
+.characters-preselect-female {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    position: absolute;
+    margin: 30px;
+}
+
+.characters-preselect-other {
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
